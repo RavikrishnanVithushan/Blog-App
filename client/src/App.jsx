@@ -7,7 +7,7 @@ import SignUp from './pages/SignUp';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Header from './components/Header';
-
+import FooterCom from './components/FooterCom';
 
 
 export default function App() {
@@ -22,6 +22,7 @@ export default function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/projects' element={<Projects/>}/>
       </Routes>
+      <FooterCom/>
     </BrowserRouter>
   )
 }
