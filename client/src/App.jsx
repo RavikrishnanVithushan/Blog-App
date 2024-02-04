@@ -17,7 +17,7 @@ export default function App() {
     <Header/>
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route element={PrivateRoute}>
+        <Route element={<PrivateRoute/>}>
           <Route path='/dashboard' element={<Dashboard/>} />
         </Route>
         <Route path='/signin' element={<SignIn/>} />
