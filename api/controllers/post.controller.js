@@ -10,7 +10,11 @@ export const createPost = async (req,res,next) =>{
         return next(errorHandler(400,'Please provide required fields'))
     }
 
-    const slug = req.body.title.split(' ').join('-').toLowerCase().replace(/[a^-zA-z0-9-]/g,'-');
+    const slug = req.body.title
+    .split(' ')
+    .join('-')
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9-]/g, '');
 
     const newPost = new Post({
         ...req.body,slug, userId: req.user.id

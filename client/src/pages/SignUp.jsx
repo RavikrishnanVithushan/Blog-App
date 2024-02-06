@@ -68,14 +68,7 @@ export default function SignUp() {
               <TextInput type='password' placeholder='Password' id='password' onChange={handleChange} />
             </div>
             <Button gradientDuoTone='purpleToPink' type='submit' disabled={loading}>
-              {
-                loading ? (
-                  <>
-                <Spinner size='sm'/>
-                 <span className='pl-3'>Loading...</span> 
-                 </>
-                ) : 'Sign Up'
-              }
+              
             </Button>
             <OAuth/>
           </form>
