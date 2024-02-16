@@ -50,26 +50,26 @@ export default function DashUsers() {
     }
   }
 
-//   const handleDeleteUser = async()=>{
-//     setShowModal(false);
-//     try{
-//       const res = await fetch(`/api/user/delete-user/${currentUser._id}`,
-//       {
-//         method:'DELETE',
-//       }
-//       );
-//       const data = await res.json();
-//       if(!res.ok){
-//         console.log(data.message);
-//       }else{
-//         setUserPosts((prev)=> prev.filter((post)=>post._id !== postIdToDelete));
-//       }
+  const handleDeleteUser = async()=>{
+    setShowModal(false);
+    try{
+      const res = await fetch(`/api/user/delete-user/${userIdToDelete}`,
+      {
+        method:'DELETE',
+      }
+      );
+      const data = await res.json();
+      if(!res.ok){
+        console.log(data.message);
+      }else{
+        setUsers((prev)=> prev.filter((user)=>user._id !== userIdToDelete));
+      }
 
-//     }catch(error){
-//       console.log(error.message);
-//     }
+    }catch(error){
+      console.log(error.message);
+    }
 
-//   }
+  }
 
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
@@ -127,11 +127,11 @@ export default function DashUsers() {
               <div className='text-center'>
                 <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto'/>
                 <h3 className='text-lg  text-gray-500 mb-5 dark:text-gray-400'>
-                Are you want to delete this Post ?
+                Are you want to delete this User ?
               </h3>
               <div className='flex justify-center gap-5'>
                 <Button color='failure'
-                // onClick={handleDeletePost}
+                onClick={handleDeleteUser}
                 >
                   Yes I'm Sure
                 </Button>
